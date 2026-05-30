@@ -95,9 +95,9 @@ def build_or_load_index():
     )
     
     # Persist the index
-    os.makedirs(PERSIST_DIR, exist_ok=True)
-    index.storage_context.persist(persist_dir=PERSIST_DIR)
-    logger.info(f"Index created and persisted to {PERSIST_DIR}")
+    os.makedirs(config.PERSIST_DIR, exist_ok=True)
+    index.storage_context.persist(persist_dir=config.PERSIST_DIR)
+    logger.info(f"Index created and persisted to {config.PERSIST_DIR}")
     return index
 
 if __name__ == "__main__":

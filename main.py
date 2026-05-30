@@ -15,6 +15,6 @@ def root():
 @app.post("/chat/")
 def chat(query: Query):
     user_query = query.query
-    retriever = Retriever(user_query)
-    response = retriever.response()
+    retriever = Retriever()
+    response = retriever.query(user_query)
     return {"response": response}
