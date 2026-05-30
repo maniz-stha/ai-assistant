@@ -1,0 +1,448 @@
+{
+  "identity": {
+    "name": "Manish Shrestha",
+    "title": "Senior Software Developer",
+    "tagline": "Ruby on Rails · 12+ Years",
+    "location": "Kathmandu, Nepal",
+    "timezone": "GMT+5:45",
+    "contact": {
+      "email": "maniz.stha@gmail.com",
+      "linkedin": "linkedin.com/in/maniz-stha",
+      "portfolio": "shresthamanis.com.np",
+      "github": "github.com/maniz-stha"
+    }
+  },
+
+  "summary": "Senior software developer with 12+ years of professional experience building and shipping production web applications. Specialises in Ruby on Rails backend development — API design, database optimisation, and scalable service architecture — with hands-on frontend experience in React and Next.js. Has worked across e-commerce, fintech, and SaaS domains, consistently taking end-to-end ownership of features from schema design through to deployment. Has a foundational background in machine learning from academic research, including an MSc thesis on NLP and a BSc project on OCR for Devnagari script. Currently expanding knowledge in Generative AI, RAG, and Agentic AI with the goal of transitioning into AI engineering roles. Comfortable in agile teams, remote environments, and codebases that demand both clean code and high performance.",
+
+  "years_of_experience": 13,
+
+  "skills": {
+    "ai_ml": [
+      "Python",
+      "scikit-learn",
+      "langchain",
+      "chromadb",
+      "llamaindex",
+      "faiss",
+      "Machine Learning",
+      "Natural Language Processing (NLP)",
+      "OCR",
+      "Generative AI",
+      "RAG (Retrieval-Augmented Generation)",
+      "Agentic AI",
+      "LLM integration"
+    ],
+    "ai_tools_in_use": [
+      "Claude (Anthropic)",
+      "Codex (OpenAI)",
+      "Gemini (Google)"
+    ],
+    "backend": [
+      "Ruby on Rails",
+      "Python",
+      "PHP",
+      "Phalcon",
+      "Magento",
+      "REST APIs",
+      "Sidekiq",
+      "Node.js"
+    ],
+    "database": [
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Query optimisation"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "TypeScript"
+    ],
+    "infrastructure_and_ops": [
+      "AWS",
+      "Docker",
+      "CI/CD",
+      "Git",
+      "Google cloud platform (GCP)",
+      "Heroku"
+    ],
+    "practices": [
+      "TDD",
+      "Clean code",
+      "Code review",
+      "REST API design",
+      "Background jobs",
+      "Async pipelines",
+      "End-to-end feature ownership",
+      "Remote collaboration"
+    ]
+  },
+
+  "core_competencies": [
+    "12+ years professional experience",
+    "Ruby on Rails specialist",
+    "REST API design and architecture",
+    "PostgreSQL and query optimisation",
+    "Background jobs and async pipelines",
+    "React and Next.js frontend",
+    "E-commerce and fintech domains",
+    "TDD and clean code practices",
+    "Remote and distributed teams",
+    "End-to-end feature ownership",
+    "Machine learning foundations (NLP, OCR)",
+    "Generative AI, RAG and Agentic AI (active learning)",
+    "Daily AI tooling — Claude, Codex, Gemini"
+  ],
+
+  "work_experience": [
+    {
+      "id": "fluid_tech",
+      "title": "Senior Software Developer",
+      "company": "Fluid Tech. Inc.",
+      "location": "Utah, US",
+      "work_type": "Remote",
+      "start_date": "2023-02",
+      "end_date": "2026-03",
+      "duration_years": 3.1,
+      "domain": "SaaS / Direct Sales",
+      "tech_stack": ["Ruby on Rails", "REST APIs", "PostgreSQL"],
+      "responsibilities": [
+        "Worked as a direct contractor for Fluid taking the same role and resposibilities as from Danphe.",
+        "Architecting and building core backend services for a multi-tenant direct sales platform using Ruby on Rails",
+        "Designing REST APIs consumed by web, mobile, and third-party integrations with a focus on performance and reliability",
+        "Design & implement core ecommerce services related to cart & order managements, tax, shipping, subscription & payments.",
+        "Owning features end-to-end: from schema design through to deployment and monitoring"
+      ]
+    },
+    {
+      "id": "danphe",
+      "title": "Senior Software Developer",
+      "company": "Danphe Software Labs",
+      "location": "Kathmandu, Nepal",
+      "work_type": "On-site",
+      "start_date": "2023-02",
+      "end_date": "2024-07",
+      "duration_years": 1.5,
+      "domain": "SaaS / Direct Sales",
+      "tech_stack": ["Ruby on Rails", "REST APIs", "PostgreSQL", "Heroku", "GCP"],
+      "responsibilities": [
+        "Worked for Fluid as a developer from Danphe.",
+        "Architecting and building core backend services for a multi-tenant direct sales platform using Ruby on Rails",
+        "Designing REST APIs consumed by web, mobile, and third-party integrations with a focus on performance and reliability",
+        "Design & implement core ecommerce services related to cart & order managements, tax, shipping, subscription & payments.",
+        "Owning features end-to-end: from schema design through to deployment and monitoring"
+      ]
+    },
+    {
+      "id": "zenledger",
+      "title": "Senior Software Engineer",
+      "company": "ZenLedger",
+      "company_alias": "Whitehat Engineering · ZenLedger",
+      "location": "Washington, US",
+      "work_type": "Remote",
+      "start_date": "2019-10",
+      "end_date": "2022-08",
+      "duration_years": 2.8,
+      "domain": "Fintech / Crypto Tax SaaS",
+      "tech_stack": ["Ruby on Rails", "PostgreSQL", "Sidekiq", "React", "Next.js", "AWS"],
+      "responsibilities": [
+        "Engineered high-throughput APIs and data ingestion pipelines to import and reconcile millions of blockchain transactions from exchanges and wallets",
+        "Designed and scaled the automated report generation pipeline to handle millions of records without degradation under peak load",
+        "Built and maintained background job infrastructure (Sidekiq) for async processing of large CSV imports and third-party data sync",
+        "Reduced long-running import jobs by re-architecting batch processing strategies, cutting processing time significantly for large portfolios",
+        "Built responsive React frontends for key user-facing features — working across the full stack from API design through to UI implementation",
+        "Collaborated remotely and async with a US-based team; maintained high ownership with minimal supervision",
+        "Practiced TDD throughout — wrote comprehensive unit and integration tests; participated in code review and on-call rotation"
+      ]
+    },
+    {
+      "id": "proshore",
+      "title": "Senior Web Developer",
+      "company": "Proshore Nepal",
+      "location": "Kathmandu, Nepal",
+      "work_type": "On-site",
+      "start_date": "2014-03",
+      "end_date": "2019-10",
+      "duration_years": 5.6,
+      "domain": "E-commerce / Agency",
+      "tech_stack": ["PHP", "Phalcon", "Laravel", "Nodejs", "Jquery", "Magento"],
+      "responsibilities": [
+        "Led backend development of large-scale e-commerce platforms; owned architecture, specs, and delivery across multiple projects",
+        "Lead developer for Ekoplaza — a custom Phalcon-based e-commerce system; coordinated with Dutch product owners and distributed remote teams",
+        "Mentored junior engineers; established coding standards and review processes across the team",
+        "Delivered multiple client-facing Magento stores end-to-end, including custom module development, third-party integrations, and performance tuning across diverse retail verticals"
+      ]
+    },
+    {
+      "id": "eb_pearls",
+      "title": "Magento Developer",
+      "company": "EB Pearls",
+      "location": "Lalitpur, Nepal",
+      "work_type": "On-site",
+      "start_date": "2012-12",
+      "end_date": "2014-03",
+      "duration_years": 1.3,
+      "domain": "E-commerce",
+      "tech_stack": ["Magento", "PHP"],
+      "responsibilities": [
+        "Promoted from intern; built e-commerce stores, custom extensions, and third-party integrations from scratch",
+        "Delivered multiple client-facing Magento stores end-to-end, including custom module development, third-party integrations, and performance tuning across diverse retail verticals"
+      ]
+    }
+  ],
+
+  "freelance_projects": [
+    {
+      "client": "TalentArmy",
+      "description": "Firebase Cloud Functions for job-ad import APIs, integrating JobAdder with Webflow",
+      "tech_stack": ["Firebase", "Cloud Functions", "Node.js", "JobAdder API", "Webflow"]
+    },
+    {
+      "client": "ZeFi",
+      "description": "Migrated frontend from React to Next.js; Firebase CMS and API development",
+      "tech_stack": ["React", "Next.js", "Firebase"]
+    },
+    {
+      "client": "Solo",
+      "description": "Backend API contributions for worksolo.com",
+      "tech_stack": ["Ruby on Rails", "REST APIs"]
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "MSc. Computer Science",
+      "institution": "Nepal College of Information Technology",
+      "location": "Lalitpur, Nepal",
+      "year": 2019,
+      "thesis": {
+        "title": "Part of Speech Tagging for Nepali Language",
+        "type": "Master's Thesis",
+        "domain": "Natural Language Processing (NLP) / Machine Learning",
+        "description": "Compared different Machine learning techniques for POS tagging for Nepali language. Comparision implementations done with python and scikit-learn.",
+        "tech_stack": ["Python", "scikit-learn", "numpy", "pandas"],
+        "highlights": [
+          "Applied supervised machine learning to a low-resource NLP problem",
+          "Hands-on experience with feature engineering for sequential text data",
+          "Practical use of scikit-learn for model training and evaluation"
+        ]
+      }
+    },
+    {
+      "degree": "BSc. Computer Science & IT",
+      "institution": "Kathford International College of Engineering & Management",
+      "location": "Nepal",
+      "year": 2013,
+      "final_project": {
+        "title": "OCR for Devnagari Script",
+        "type": "Bachelor's Final Project",
+        "domain": "Computer Vision / Optical Character Recognition",
+        "description": "Built an Optical Character Recognition system for Devnagari script (used in Nepali and Hindi), covering image preprocessing, character segmentation, and classification.",
+          "tech_stack": ["java", "neural networks"],
+        "highlights": [
+          "Implemented end-to-end OCR pipeline for a non-Latin script in Java",
+          "Covered image preprocessing, segmentation, and character classification using neural networks",
+          "Early applied ML work on a real-world computer vision problem"
+        ]
+      }
+    }
+  ],
+
+  "domain_experience": [
+    {
+      "domain": "Fintech / Crypto Tax",
+      "companies": ["ZenLedger"],
+      "highlights": [
+        "Blockchain transaction reconciliation at scale",
+        "High-throughput data ingestion pipelines",
+        "Automated tax report generation for large portfolios"
+      ]
+    },
+    {
+      "domain": "SaaS / Multi-tenant Platforms",
+      "companies": ["Fluid Tech. Inc."],
+      "highlights": [
+        "Multi-tenant architecture design",
+        "REST APIs for web, mobile, and third-party consumers",
+        "built ecommerce services for cart & order management, tax, shipping, payments and subscriptions."
+      ]
+    },
+    {
+      "domain": "E-commerce",
+      "companies": ["Proshore Nepal", "EB Pearls"],
+      "highlights": [
+        "Custom Phalcon-based e-commerce platform (Ekoplaza)",
+        "Magento custom module development",
+        "Magento ecommerce stores",
+        "Large-scale platform architecture and delivery"
+      ]
+    }
+  ],
+
+  "ai_and_ml": {
+    "summary": "Manish has academic and research foundations in machine learning and NLP, and is actively expanding into Generative AI, RAG, and Agentic AI with the intent to work as an AI engineer.",
+    "formal_experience": [
+      {
+        "context": "MSc Thesis",
+        "title": "Part of Speech Tagging for Nepali Language",
+        "domain": "NLP / Machine Learning",
+        "tech_stack": ["Python", "scikit-learn", "numpy", "pandas"],
+        "description": "Researched and compared different machine learning techniques used for POS tagging for Nepali, a low-resource language, applying supervised ML techniques with Python and scikit-learn."
+      },
+      {
+        "context": "BSc Final Project",
+        "title": "OCR for Devnagari Script",
+        "domain": "Computer Vision / OCR",
+        "description": "Built an end-to-end OCR system for Devnagari script covering image preprocessing, character segmentation, and classification."
+      }
+    ],
+    "current_ai_tool_usage": {
+      "description": "Actively uses modern AI tools in daily software development and personal productivity workflows.",
+      "tools": [
+        {
+          "name": "Claude",
+          "provider": "Anthropic",
+          "use_cases": ["Code generation", "Code review", "Architecture discussions", "Day-to-day productivity"]
+        },
+        {
+          "name": "Codex",
+          "provider": "OpenAI",
+          "use_cases": ["Programming assistance", "Code completion"]
+        },
+        {
+          "name": "Gemini",
+          "provider": "Google",
+          "use_cases": ["Programming assistance", "Day-to-day operations"]
+        }
+      ]
+    },
+    "current_learning": [
+      "Generative AI concepts and architecture",
+      "Retrieval-Augmented Generation (RAG)",
+      "Agentic AI and autonomous agent design",
+      "LLM integration patterns in production applications"
+    ],
+    "career_interest": "Actively exploring AI engineer roles that combine strong backend engineering skills (Rails, Python, PostgreSQL) with Generative AI, RAG, and Agentic AI capabilities."
+  },
+
+  "career_goals": {
+    "current_focus": "Senior Software Developer (Ruby on Rails) with active expansion into AI engineering",
+    "target_roles": [
+      "Senior Software Developer",
+      "AI Engineer",
+      "Backend Engineer with AI/ML focus"
+    ],
+    "transition_direction": "Leveraging 12+ years of backend engineering experience alongside growing Generative AI and RAG knowledge to move into AI engineering roles",
+    "strengths_for_ai_roles": [
+      "Strong Python background from academic ML work and production use",
+      "Experience building data ingestion pipelines and scalable backend systems — applicable to RAG and LLM infrastructure",
+      "Academic NLP and computer vision foundations from MSc thesis and BSc project",
+      "Hands-on daily use of LLM tools (Claude, Codex, Gemini)",
+      "Active self-directed learning in Generative AI, RAG, and Agentic AI"
+    ]
+  },
+
+  "notable_achievements": [
+    {
+      "area": "Performance Optimisation",
+      "description": "Diagnosed and resolved SQL performance bottlenecks using query rewrites, index tuning, and EXPLAIN-driven analysis on large PostgreSQL datasets at ZenLedger"
+    },
+    {
+      "area": "Scalable Pipelines",
+      "description": "Designed and scaled automated report generation pipeline at ZenLedger to handle millions of records without degradation under peak load"
+    },
+    {
+      "area": "Batch Processing",
+      "description": "Reduced long-running import jobs by re-architecting batch processing strategies, significantly cutting processing time for large crypto portfolios"
+    },
+    {
+      "area": "Data Ingestion",
+      "description": "Engineered high-throughput APIs and data ingestion pipelines importing and reconciling millions of blockchain transactions from exchanges and wallets"
+    },
+    {
+      "area": "Team Leadership",
+      "description": "Mentored junior engineers and established coding standards and review processes at Proshore Nepal"
+    },
+    {
+      "area": "International Collaboration",
+      "description": "Led Ekoplaza project coordinating with Dutch product owners and distributed remote teams"
+    }
+  ],
+
+  "work_style": [
+    "Strong preference for remote and async collaboration across timezones",
+    "End-to-end feature ownership from schema design to deployment",
+    "High autonomy with minimal supervision",
+    "TDD practitioner with emphasis on unit and integration tests",
+    "Active code reviewer with experience in establishing team coding standards",
+    "Experienced in on-call rotations and production monitoring"
+  ],
+
+  "faq": [
+    {
+      "question": "What is Manish's primary programming language and framework?",
+      "answer": "Ruby on Rails. Manish has been specialising in Rails for approximately 6 years and has 12+ years of total professional experience."
+    },
+    {
+      "question": "What database does Manish work with?",
+      "answer": "PostgreSQL is his primary database, with deep experience in query optimisation, index tuning, and EXPLAIN-driven analysis. He also has experience with MySQL and Redis."
+    },
+    {
+      "question": "Does Manish have frontend experience?",
+      "answer": "Yes. He has hands-on experience with React, Next.js, and TypeScript, and has built responsive frontends as part of full-stack roles."
+    },
+    {
+      "question": "What is Manish's experience with background jobs?",
+      "answer": "Manish has built and maintained Sidekiq-based background job infrastructure for async processing, large CSV imports, and third-party data sync."
+    },
+    {
+      "question": "Has Manish worked in fintech or crypto?",
+      "answer": "Yes. He worked as a Senior Software Engineer at ZenLedger (crypto tax SaaS), where he built high-throughput blockchain transaction ingestion pipelines and automated report generation."
+    },
+    {
+      "question": "Where is Manish located?",
+      "answer": "Kathmandu, Nepal (GMT+5:45). He is experienced in remote work and async collaboration with US-based teams."
+    },
+    {
+      "question": "What is Manish's educational background?",
+      "answer": "He holds an MSc in Computer Science from Nepal College of Information Technology (2019) and a BSc in Computer Science & IT from Kathford International College (2013)."
+    },
+    {
+      "question": "Does Manish have experience with mobile apps?",
+      "answer": "He has designed REST APIs consumed by mobile clients. His primary mobile-facing experience is API design for mobile consumers rather than native mobile development. He has vibe-coded few small mobile apps for personal use using react native."
+    },
+    {
+      "question": "Does Manish have experience with AI or machine learning?",
+      "answer": "Yes, with important context. He has formal academic ML experience: his MSc thesis implemented a Part of Speech Tagger for Nepali language using Python and scikit-learn, and his BSc project was an OCR system for Devnagari script. He does not have professional/commercial AI experience. He actively uses AI tools (Claude, Codex, Gemini) in daily work and is currently expanding his knowledge in Generative AI, RAG, and Agentic AI."
+    },
+    {
+      "question": "Is Manish interested in AI engineering roles?",
+      "answer": "Yes. He is actively learning Generative AI, RAG, and Agentic AI and is planning to explore AI engineer roles that combine his strong backend engineering background with these emerging skills."
+    },
+    {
+      "question": "What AI tools does Manish use?",
+      "answer": "He uses Claude (Anthropic), Codex (OpenAI), and Gemini (Google) regularly for programming assistance and day-to-day productivity."
+    },
+    {
+      "question": "What was Manish's MSc thesis about?",
+      "answer": "Part of Speech Tagging for Nepali Language — a machine learning-based NLP project using Python and scikit-learn, focusing on a low-resource language."
+    },
+    {
+      "question": "What was Manish's BSc final project?",
+      "answer": "An OCR (Optical Character Recognition) system for Devnagari script, covering image preprocessing, character segmentation, and classification."
+    },
+    {
+      "question": "What is Manish currently learning?",
+      "answer": "Generative AI concepts, Retrieval-Augmented Generation (RAG), and Agentic AI — with the goal of expanding into AI engineering roles."
+    },
+    {
+      "question": "What cloud and DevOps tools has Manish used?",
+      "answer": "He has experience with AWS, GCP, Docker, CI/CD pipelines, Git, and Heroku."
+    },
+    {
+      "question": "What domains has Manish worked in?",
+      "answer": "Fintech (crypto tax at ZenLedger), SaaS/multi-tenant platforms (Fluid Tech), and e-commerce (Proshore Nepal, EB Pearls)."
+    }
+  ]
+}

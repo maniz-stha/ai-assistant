@@ -1,0 +1,10 @@
+python-dotenv
+google-genai
+llama-index
+ipdb
+llama-index-llms-google-genai
+llama-index-embeddings-google-genai
+llama-index-vector-stores-faiss
+faiss-cpu
+fastapi[standard]
+pydantic
