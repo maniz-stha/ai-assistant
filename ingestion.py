@@ -7,6 +7,7 @@ from llama_index.core import (
     load_index_from_storage, 
     Settings
 )
+from llama_index.core.node_parser import SentenceSplitter
 from llama_index.embeddings.google_genai import GoogleGenAIEmbedding
 from llama_index.llms.google_genai import GoogleGenAI
 from llama_index.vector_stores.faiss import FaissVectorStore
@@ -33,6 +34,10 @@ def setup_settings():
         model=f"models/{config.INFERENCE_MODEL}",
         api_key=config.GOOGLE_API_KEY
     )
+
+    # Use SentenceSplitter as per design spec
+    logger.info("Setting up SentenceSplitter (chunk_size=512, chunk_overlap=64)")
+    Settings.node_parser = SentenceSplitter(chunk_size=512, chunk_overlap=64)
 
 def get_documents():
     """Load documents from all sources."""
