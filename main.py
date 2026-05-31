@@ -1,20 +1,23 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import Optional
 from retriever import Retriever
 
-class Query(BaseModel):
-    query: str
+class ChatRequest(BaseModel):
+    message: str
+    session_id: Optional[str] = "default"
 
 app = FastAPI()
+retriever = Retriever()
 
 @app.get("/")
 def root():
-    return {"message": " RAG app running."}
-
+    return {"message": "RAG app running."}
 
 @app.post("/chat/")
-def chat(query: Query):
-    user_query = query.query
-    retriever = Retriever()
-    response = retriever.query(user_query)
-    return {"response": response}
+def chat(request: ChatRequest):
+    response = retriever.query(request.message, session_id=request.session_id)
+    return {
+        "response": response,
+        "session_id": request.session_id
+    }

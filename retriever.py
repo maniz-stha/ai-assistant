@@ -5,6 +5,8 @@ from llama_index.core import (
     load_index_from_storage,
 )
 from llama_index.vector_stores.faiss import FaissVectorStore
+from llama_index.core.memory import ChatMemoryBuffer
+from collections import OrderedDict
 from config import config
 from prompt_templates import system_prompt, chat_prompt
 
@@ -16,6 +18,9 @@ class Retriever:
     def __init__(self):
         config.setup()
         self.index = self.load_index()
+        # OrderedDict to maintain session order for LRU eviction
+        self.chat_engines = OrderedDict()
+        self.MAX_SESSIONS = 50 # Prevent memory exhaustion by limiting active sessions
 
     def load_index(self):
         persist_dir = config.PERSIST_DIR
@@ -37,31 +42,51 @@ class Retriever:
             logger.error(f"Storage directory {persist_dir} is empty or does not exist. Please run ingestion.py first.")
             return None
 
-    def get_chat_engine(self):
+    def get_chat_engine(self, session_id):
         if not self.index:
             return None
         
-        # Use ContextChatEngine for RAG
-        # system_prompt: persona description
-        # context_template: how to format context + query (must be a PromptTemplate object)
+        # Check if chat engine for this session already exists
+        if session_id in self.chat_engines:
+            # Move to end to mark it as the most recently used
+            self.chat_engines.move_to_end(session_id)
+            return self.chat_engines[session_id]
+
+        # Evict oldest session if we are at capacity
+        if len(self.chat_engines) >= self.MAX_SESSIONS:
+            oldest_session, _ = self.chat_engines.popitem(last=False)
+            logger.info(f"Evicted oldest session memory: {oldest_session}")
+
+        # Create new chat engine with memory for new session
+        memory = ChatMemoryBuffer.from_defaults(token_limit=3000)
+        
         chat_engine = self.index.as_chat_engine(
             chat_mode="context",
+            memory=memory,
             system_prompt=system_prompt.template,
             context_template=chat_prompt
         )
         
+        # Store for future use in the same session
+        self.chat_engines[session_id] = chat_engine
         return chat_engine
 
-    def query(self, user_query):
-        chat_engine = self.get_chat_engine()
+    def query(self, user_query, session_id="default"):
+        chat_engine = self.get_chat_engine(session_id)
         if not chat_engine:
             return "Error: Could not initialize chat engine. Please check if the index exists."
         
         response = chat_engine.chat(user_query)
-        return response
+        return str(response)
 
 if __name__ == "__main__":
     retriever = Retriever()
     if retriever.index:
-        response = retriever.query("What are his primary technical skills?")
-        print(f"\nResponse: {response}")
+        # Test session persistence
+        print(f"\n--- Turn 1 ---")
+        response1 = retriever.query("What are his primary technical skills?", session_id="test-123")
+        print(f"Response 1: {response1}")
+        
+        print(f"\n--- Turn 2 (with memory) ---")
+        response2 = retriever.query("Can you tell me more about his Python experience?", session_id="test-123")
+        print(f"Response 2: {response2}")
