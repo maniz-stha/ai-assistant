@@ -74,8 +74,9 @@ The server will be available at `http://127.0.0.1:8000`.
 
 ### API Endpoints
 
-- **GET `/`**: Health check.
-- **POST `/chat/`**: Chat with the assistant.
+- **GET `/`**: Welcome message.
+- **GET `/health`**: Health check.
+- **POST `/chat`**: Chat with the assistant.
   - **Request Body**:
     ```json
     {

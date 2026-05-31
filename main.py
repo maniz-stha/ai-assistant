@@ -29,7 +29,11 @@ limiter = RateLimiter(requests_limit=10, window_seconds=60)
 def root():
     return {"message": "RAG app running."}
 
-@app.post("/chat/")
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
+
+@app.post("/chat")
 def chat(request: ChatRequest, fastapi_req: Request):
     client_ip = fastapi_req.client.host
     
