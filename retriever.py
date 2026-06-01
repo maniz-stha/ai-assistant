@@ -18,8 +18,8 @@ class Retriever:
     def __init__(self):
         config.setup()
         self.index = self.load_index()
-        # OrderedDict to maintain session order for LRU eviction
-        self.chat_engines = OrderedDict()
+        # OrderedDict to maintain session order for LRU eviction of memory buffers
+        self.chat_memories = OrderedDict()
         self.MAX_SESSIONS = 50 # Prevent memory exhaustion by limiting active sessions
 
     def load_index(self):
@@ -46,29 +46,30 @@ class Retriever:
         if not self.index:
             return None
         
-        # Check if chat engine for this session already exists
-        if session_id in self.chat_engines:
+        # Check if chat memory for this session already exists
+        if session_id in self.chat_memories:
             # Move to end to mark it as the most recently used
-            self.chat_engines.move_to_end(session_id)
-            return self.chat_engines[session_id]
+            self.chat_memories.move_to_end(session_id)
+            memory = self.chat_memories[session_id]
+        else:
+            # Evict oldest session if we are at capacity
+            if len(self.chat_memories) >= self.MAX_SESSIONS:
+                oldest_session, _ = self.chat_memories.popitem(last=False)
+                logger.info(f"Evicted oldest session memory: {oldest_session}")
 
-        # Evict oldest session if we are at capacity
-        if len(self.chat_engines) >= self.MAX_SESSIONS:
-            oldest_session, _ = self.chat_engines.popitem(last=False)
-            logger.info(f"Evicted oldest session memory: {oldest_session}")
-
-        # Create new chat engine with memory for new session
-        memory = ChatMemoryBuffer.from_defaults(token_limit=3000)
+            # Create new chat memory for new session
+            memory = ChatMemoryBuffer.from_defaults(token_limit=3000)
+            
+            # Store memory for future use in the same session
+            self.chat_memories[session_id] = memory
         
+        # Construct chat engine on the fly using the cached memory
         chat_engine = self.index.as_chat_engine(
             chat_mode="context",
             memory=memory,
             system_prompt=system_prompt.template,
             context_template=chat_prompt
         )
-        
-        # Store for future use in the same session
-        self.chat_engines[session_id] = chat_engine
         return chat_engine
 
     def query(self, user_query, session_id="default"):
