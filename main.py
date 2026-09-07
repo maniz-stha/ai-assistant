@@ -33,10 +33,11 @@ def root():
 def health():
     return {"status": "healthy"}
 
+
 @app.post("/chat")
 def chat(request: ChatRequest, fastapi_req: Request):
     client_ip = fastapi_req.client.host
-    
+
     allowed, retry_after = limiter.is_allowed(client_ip)
     if not allowed:
         raise HTTPException(
@@ -45,8 +46,14 @@ def chat(request: ChatRequest, fastapi_req: Request):
             headers={"Retry-After": str(retry_after)}
         )
 
-    response = retriever.query(request.message, session_id=request.session_id)
-    return {
-        "response": response,
-        "session_id": request.session_id
-    }
+    try:
+        response = retriever.query(request.message, session_id=request.session_id)
+        return {
+            "response": response,
+            "session_id": request.session_id
+        }
+    except Exception:
+        return {
+            "response": "Hmm, I'm having a bit of trouble right now. Could you try asking again in a moment?",
+            "session_id": request.session_id
+        }
