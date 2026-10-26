@@ -3,3 +3,7 @@ docs/superpowers
 .env
 venv/
 __pycache__/
+data/resumes/*.pdf
+/storage/current/
+/storage/current.build-*/
+/storage/current.previous-*/

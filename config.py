@@ -13,7 +13,7 @@ class Config:
     ALLOWED_ORIGIN: str = os.getenv("ALLOWED_ORIGIN", "*")
     INFERENCE_MODEL: str = "gemini-3.1-flash-lite"
     EMBEDDING_MODEL: str = "gemini-embedding-001"
-    PERSIST_DIR: str = "./storage"
+    PERSIST_DIR: str = "./storage/current"
 
     def setup(self):
         # Configure logging

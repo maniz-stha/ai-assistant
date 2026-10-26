@@ -7,3 +7,5 @@ llama-index-vector-stores-faiss
 faiss-cpu
 fastapi[standard]
 pydantic
+pypdf
+requests

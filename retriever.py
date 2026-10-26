@@ -24,6 +24,16 @@ class Retriever:
 
     def load_index(self):
         persist_dir = config.PERSIST_DIR
+        if not os.path.exists(persist_dir):
+            from pathlib import Path
+
+            target = Path(persist_dir)
+            backups = list(target.parent.glob(f"{target.name}.previous-*"))
+            if len(backups) == 1:
+                backups[0].rename(target)
+                logger.warning("Recovered index from interrupted publish: %s", target)
+            elif backups:
+                logger.error("Multiple index backups found for %s; choose one manually", target)
         if os.path.exists(persist_dir) and os.listdir(persist_dir):
             logger.info(f"Loading existing index from {persist_dir}...")
             try:
