@@ -4,12 +4,16 @@ import os
 from llama_index.core import Document
 
 GITHUB_USER = "maniz-stha"
-HEADERS = {"Authorization": os.getenv("GITHUB_ACCESS_TOKEN")}
+
+
+def headers():
+    token = os.getenv("GITHUB_ACCESS_TOKEN")
+    return {"Authorization": f"Bearer {token}"} if token else {}
 
 TIMEOUT = 15  # seconds per request
 
 def fetch_profile():
-    r = requests.get(f"https://api.github.com/users/{GITHUB_USER}", headers=HEADERS, timeout=TIMEOUT)
+    r = requests.get(f"https://api.github.com/users/{GITHUB_USER}", headers=headers(), timeout=TIMEOUT)
     r.raise_for_status()
     return r.json()
 
@@ -20,26 +24,32 @@ def fetch_repos():
         r = requests.get(
             f"https://api.github.com/users/{GITHUB_USER}/repos",
             params={"sort": "updated", "per_page": 100, "page": page},
-            headers=HEADERS,
+            headers=headers(),
             timeout=TIMEOUT
         )
         r.raise_for_status()
         batch = r.json()
-        if not isinstance(batch, list) or not batch:
+        if not isinstance(batch, list):
+            raise ValueError("Unexpected GitHub repository response")
+        if not batch:
             break
         repos.extend(batch)
         page += 1
     return repos
 
 def fetch_languages(repo_full_name):
-    r = requests.get(f"https://api.github.com/repos/{repo_full_name}/languages", headers=HEADERS, timeout=TIMEOUT)
-    return r.json() if r.status_code == 200 else {}
+    r = requests.get(f"https://api.github.com/repos/{repo_full_name}/languages", headers=headers(), timeout=TIMEOUT)
+    r.raise_for_status()
+    return r.json()
 
 def fetch_readme(repo_full_name):
-    r = requests.get(f"https://api.github.com/repos/{repo_full_name}/readme", headers=HEADERS, timeout=TIMEOUT)
+    r = requests.get(f"https://api.github.com/repos/{repo_full_name}/readme", headers=headers(), timeout=TIMEOUT)
     if r.status_code == 200:
         content = r.json().get("content", "")
         return base64.b64decode(content).decode("utf-8", errors="ignore")
+    if r.status_code == 404:
+        return None
+    r.raise_for_status()
     return None
 
 def build_data():
